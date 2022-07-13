@@ -1,9 +1,9 @@
-function EventImage(props) {
+const EventImage = (props) => {
   return (
     <>
       <p>{props.img}</p>
     </>
   );
-}
+};
 
 export default EventImage;

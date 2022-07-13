@@ -1,6 +1,6 @@
 import EventImage from "./EventImage";
 
-function EventOverview(props) {
+const EventOverview = (props) => {
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const daywritten = props.date.toLocaleString("en-US", { weekday: "short" });
   const month = props.date.toLocaleString("en-US", { month: "long" });
@@ -21,6 +21,6 @@ function EventOverview(props) {
       </div>
     </>
   );
-}
+};
 
 export default EventOverview;

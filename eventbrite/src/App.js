@@ -3,13 +3,13 @@ import React from "react";
 import Homepage from "./pages/Homepage.js";
 import EventInformation from "./pages/EventInformation.js";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Homepage></Homepage>
       <EventInformation></EventInformation>
     </div>
   );
-}
+};
 
 export default App;

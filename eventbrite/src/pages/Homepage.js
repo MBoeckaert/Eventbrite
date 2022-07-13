@@ -1,4 +1,3 @@
-import React from "react";
 import EventOverview from "../components/EventOverview";
 
 const Homepage = () => {
