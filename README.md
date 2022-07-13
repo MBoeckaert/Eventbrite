@@ -5,6 +5,7 @@ DEV4 assignment recreate eventbrite
 Pages:
 
 - Home
+  -> Eventinformation -> OrderTickets -> PayTickets
 - Search
 - Likes
 - Tickets

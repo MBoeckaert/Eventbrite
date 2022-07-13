@@ -1,7 +1,7 @@
 const Button = (props) => {
   return (
     <>
-      <p>I'm a button</p>
+      <button>I'm a button</button>
     </>
   );
 };
