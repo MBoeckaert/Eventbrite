@@ -1,7 +1,7 @@
 import React from "react";
 import EventOverview from "../components/EventOverview";
 
-const Home = () => {
+const Homepage = () => {
   const events = [
     {
       id: "e1",
@@ -42,4 +42,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homepage;

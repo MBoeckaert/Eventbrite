@@ -1,11 +1,13 @@
 import React from "react";
 //import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home.js";
+import Homepage from "./pages/Homepage.js";
+import EventInformation from "./pages/EventInformation.js";
 
 function App() {
   return (
     <div className="App">
-      <Home></Home>
+      <Homepage></Homepage>
+      <EventInformation></EventInformation>
     </div>
   );
 }
