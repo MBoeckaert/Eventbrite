@@ -1,7 +1,7 @@
 const EventImage = (props) => {
   return (
     <>
-      <p>{props.img}</p>
+      <img alt="pictureEvent" src={props.img} className="img" />
     </>
   );
 };
