@@ -1,4 +1,5 @@
 import EventOverview from "../components/EventOverview";
+import { Stack } from "@mui/material";
 
 const Homepage = (props) => {
   /* Check if there are events available close to you with a ternary operator */
@@ -21,10 +22,8 @@ const Homepage = (props) => {
       {/* use a filter or work with geolocation API */}
       <p>Evenementen zoeken in</p>
       <h1>Oost-Vlaanderen</h1>
-
       {/* Popular in Oost-Vl niet doen */}
-
-      {amountEventsAvailable}
+      <Stack spacing={4}>{amountEventsAvailable}</Stack>
     </>
   );
 };
