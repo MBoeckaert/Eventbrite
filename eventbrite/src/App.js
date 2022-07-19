@@ -1,10 +1,8 @@
 import "./App.css";
 import React from "react";
-//import { Route, Routes } from "react-router-dom";
+// import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Homepage from "./pages/Homepage.js";
-// import EventInformation from "./pages/EventInformation.js";
-// import PayTickets from "./pages/PayTickets";
-import { Container } from "@mui/system";
+import OrderTickets from "./pages/OrderTickets.js";
 
 const App = () => {
   const dummy__events = [
@@ -31,13 +29,10 @@ const App = () => {
     },
   ];
   return (
-    <div className="App">
-      <Container>
-        <Homepage events={dummy__events}></Homepage>
-        {/* <EventInformation></EventInformation>
-        <PayTickets></PayTickets> */}
-      </Container>
-    </div>
+    <>
+      {/* <Homepage events={dummy__events} /> */}
+      <OrderTickets></OrderTickets>
+    </>
   );
 };
 

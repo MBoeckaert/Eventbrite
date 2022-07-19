@@ -1,5 +1,4 @@
 import EventImage from "./EventImage";
-import AppBar from "../components/AppBar.js";
 import { Card, Grid, Typography, Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material";
 
@@ -42,7 +41,7 @@ const EventOverview = (props) => {
                   justifyContent: "space-around",
                 }}
               >
-                <Typography variant="h6" component="h2">
+                <Typography variant="h6" component="h2" sx={{ color: "red" }}>
                   {daywritten + ", " + month + " " + day}
                 </Typography>
                 <Typography variant="subtitle2" component="h3">
@@ -51,7 +50,11 @@ const EventOverview = (props) => {
                 {/* Make this grid container a component as well, otherwise too much grids nested */}
                 <Grid container spacing={2}>
                   <Grid item xs={8}>
-                    <Typography variant="body2" component="span">
+                    <Typography
+                      variant="body2"
+                      component="span"
+                      sx={{ color: "Grey" }}
+                    >
                       {props.location}
                     </Typography>
                   </Grid>
@@ -73,7 +76,6 @@ const EventOverview = (props) => {
           </Grid>
         </Grid>
       </Card>
-      <AppBar></AppBar>
     </>
   );
 };

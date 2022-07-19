@@ -1,5 +1,7 @@
 import EventOverview from "../components/EventOverview";
 import { Stack } from "@mui/material";
+import AppBar from "../components/AppBar.js";
+import { Container } from "@mui/system";
 
 const Homepage = (props) => {
   /* Check if there are events available close to you with a ternary operator */
@@ -19,11 +21,18 @@ const Homepage = (props) => {
 
   return (
     <>
-      {/* use a filter or work with geolocation API */}
-      <p>Evenementen zoeken in</p>
-      <h1>Oost-Vlaanderen</h1>
-      {/* Popular in Oost-Vl niet doen */}
-      <Stack spacing={4}>{amountEventsAvailable}</Stack>
+      <Container
+        sx={{
+          marginY: 5,
+        }}
+      >
+        {/* use a filter or work with geolocation API */}
+        <p>Evenementen zoeken in</p>
+        <h1>Oost-Vlaanderen</h1>
+        {/* Popular in Oost-Vl niet doen */}
+        <Stack spacing={4}>{amountEventsAvailable}</Stack>
+        <AppBar />
+      </Container>
     </>
   );
 };

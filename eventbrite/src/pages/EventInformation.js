@@ -1,41 +1,86 @@
 import EventImage from "../components/EventImage";
-import Button from "../components/Button.js";
+import { Container, Grid, Typography, Box, Paper } from "@mui/material";
+import ButtonTickets from "../components/Button.js";
 
-const ClickedEventInformation = () => {
+const ClickedEventInformation = (props) => {
   return (
     <>
-      <EventImage />
-      <h2> Lake Night 2022</h2>
-      <div className="event-information__whereabouts">
-        <div className="event-information__hour-date">
-          <p>Calendar Icon</p>
-          <p>Date</p>
-          <p>Hour</p>
-        </div>
-        <div className="event-information__location">
-          <p>Location Icon</p>
-          <p>Name Location</p>
-          <p>Adress Location</p>
-        </div>
-        <div className="event-information__prices">
-          <p>Ticket Icon</p>
-          <p>Price Range</p>
-          <p>Price information</p>
-        </div>
-      </div>
+      <EventImage img={props.img} />
+      <Container>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{ marginY: 5, fontWeight: 900 }}
+        >
+          Lake Night 2022
+        </Typography>
+        <Grid
+          container
+          spacing={4}
+          sx={{ borderBottom: 1, marginBottom: 2, borderColor: "grey.500" }}
+        >
+          <Grid item xs={2}>
+            <Typography variant="body1" component="p">
+              Calender Icon
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <p>Date</p>
+            <p>Hour</p>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="body1" component="p">
+              Location Icon
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <p>Name Location</p>
+            <p>Adress Location</p>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="body1" component="p">
+              Tickets Icon
+            </Typography>
+          </Grid>
+          <Grid item xs={10} sx={{ marginBottom: 2 }}>
+            <p>Price Range</p>
+            <p>Price information</p>
+          </Grid>
+        </Grid>
 
-      <div className="event-information__extra">
-        <h3>Extra</h3>
-        <p>Extra Information</p>
-      </div>
+        <Paper
+          elevation={0}
+          square
+          sx={{
+            marginY: 2,
+            paddingY: 2,
+            borderBottom: 1,
+            borderColor: "grey.500",
+          }}
+        >
+          <Typography variant="h6" component="h3" sx={{ marginBottom: 2 }}>
+            Extra
+          </Typography>
+          <p>Extra Information</p>
+        </Paper>
 
-      <div className="event-information__location">
-        <h3>Location</h3>
-        <p>Name Loaction</p>
-        <p>Google Maps</p>
-      </div>
+        <Box
+          sx={{
+            marginY: 2,
+            paddingY: 2,
+            borderBottom: 1,
+            borderColor: "grey.500",
+          }}
+        >
+          <Typography variant="h6" component="h3" sx={{ marginBottom: 2 }}>
+            Location
+          </Typography>
+          <p>Name Loaction</p>
+          <p>Google Maps</p>
+        </Box>
 
-      <Button></Button>
+        <ButtonTickets />
+      </Container>
     </>
   );
 };
