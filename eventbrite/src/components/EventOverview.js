@@ -1,8 +1,24 @@
 import EventImage from "./EventImage";
+import AppBar from "../components/AppBar.js";
 import { Card, Grid, Typography, Box } from "@mui/material";
-// import ShareIcon from "@mui/icons-material/Share";
-// import { FavoriteBorder } from "@mui/icons-material";
-// import DeleteIcon from "@mui/icons-material/Delete";
+import { createTheme, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  components: {
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: "body3",
+          },
+          style: {
+            fontSize: 9,
+          },
+        },
+      ],
+    },
+  },
+});
 
 const EventOverview = (props) => {
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
@@ -17,43 +33,47 @@ const EventOverview = (props) => {
             <EventImage img={props.img} />
           </Grid>
           <Grid item xs={8}>
-            <Box
-              sx={{
-                height: "60%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-              }}
-            >
-              <Typography variant="h6" component="h2">
-                {daywritten + ", " + month + " " + day}
-              </Typography>
-              <Typography variant="subtitle2" component="h3">
-                {props.name}
-              </Typography>
-              {/* Make this grid container a component as well, otherwise too much grids nested */}
-              <Grid container spacing={2}>
-                <Grid item xs={8}>
-                  <Typography variant="body2" component="span">
-                    {props.location}
-                  </Typography>
+            <ThemeProvider theme={theme}>
+              <Box
+                sx={{
+                  height: "60%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                }}
+              >
+                <Typography variant="h6" component="h2">
+                  {daywritten + ", " + month + " " + day}
+                </Typography>
+                <Typography variant="subtitle2" component="h3">
+                  {props.name}
+                </Typography>
+                {/* Make this grid container a component as well, otherwise too much grids nested */}
+                <Grid container spacing={2}>
+                  <Grid item xs={8}>
+                    <Typography variant="body2" component="span">
+                      {props.location}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Typography variant="body3" component="span">
+                      Share
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Typography variant="body3" component="span">
+                      {/* <FavoriteBorder /> */}
+                      {/* <svg data-testid="DeleteIcon"></svg> */}
+                      Like
+                    </Typography>
+                  </Grid>
                 </Grid>
-                <Grid item xs={2}>
-                  <Typography variant="body2" component="span">
-                    {/* <ShareIcon></ShareIcon> Share */}
-                  </Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography variant="body2" component="span">
-                    {/* <FavoriteBorder /> */}
-                    {/* <svg data-testid="DeleteIcon"></svg> */}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Box>
+              </Box>
+            </ThemeProvider>
           </Grid>
         </Grid>
       </Card>
+      <AppBar></AppBar>
     </>
   );
 };
